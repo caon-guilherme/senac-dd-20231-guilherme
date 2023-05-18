@@ -13,6 +13,11 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
+
+import controller.EnderecoController;
+import model.exception.CampoInvalidoException;
+import model.vo.Endereco;
+
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -22,7 +27,7 @@ import java.awt.event.ActionEvent;
 public class TelaCadastroEndereco {
 
 	private JFrame frmCadastroDeEndereco;
-	private MaskFormatter mascaraCep; 
+	private MaskFormatter mascaraCep;
 	private JTextField txtRua;
 	private JTextField textNumero;
 	private JTextField textBairro;
@@ -34,7 +39,6 @@ public class TelaCadastroEndereco {
 	private JLabel lblBairro;
 	private JLabel lblCidade;
 	private JLabel lblEstado;
-	
 
 	/**
 	 * Launch the application.
@@ -145,10 +149,24 @@ public class TelaCadastroEndereco {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//Preencher um novo Endereco com o que foi informado na tela	
-				
+			Endereco novoEndereco = new Endereco();
+			
+			String cepInformado = (String mascaraCep.stringToValue(txtCep.getText()));
+			
+			novoEndereco.setCep(mascaraCep);
+			
+			novoEndereco.setBairro(textBairro.getText());
+			
 			// Instanciar um objeto de Enderecco Controller
-				
+			
 			//Chamar o controller.salver(novoEndereco)
+			EnderecoController controller = new EnderecoController();
+			try {
+				controller.inserir(novoEndereco);
+				JOptionPane.showMessageDialog(null, "Endereço cadastrado!");
+			} catch (CampoInvalidoException e1) {
+				JOptionPane.showMessageDialog(null, "Informe os seguintes campos\n" );
+			}
 			}
 		});
 		frmCadastroDeEndereco.getContentPane().add(btnNewButton, "2, 16, 3, 1");
