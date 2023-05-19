@@ -1,10 +1,10 @@
-package main.java.controller;
+package controller;
 
 import java.util.List;
 
-import main.java.model.bo.EnderecoBO;
-import main.java.model.exception.CampoInvalidoException;
-import main.java.model.vo.Endereco;
+import model.bo.EnderecoBO;
+import model.exception.CampoInvalidoException;
+import model.vo.Endereco;
 
 public class EnderecoController {
 

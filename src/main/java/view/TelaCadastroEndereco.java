@@ -1,4 +1,4 @@
-package main.java.view;
+package view;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -18,9 +18,9 @@ import com.privatejgoodies.forms.layout.FormLayout;
 import com.privatejgoodies.forms.layout.FormSpecs;
 import com.privatejgoodies.forms.layout.RowSpec;
 
-import main.java.controller.EnderecoController;
-import main.java.model.exception.CampoInvalidoException;
-import main.java.model.vo.Endereco;
+import controller.EnderecoController;
+import model.exception.CampoInvalidoException;
+import model.vo.Endereco;
 
 public class TelaCadastroEndereco {
 

@@ -1,4 +1,4 @@
-package main.java.model.dao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.model.vo.Endereco;
+import model.vo.Endereco;
 
 public class EnderecoDAO {
 

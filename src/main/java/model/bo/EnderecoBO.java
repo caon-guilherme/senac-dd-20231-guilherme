@@ -1,9 +1,9 @@
-package main.java.model.bo;
+package model.bo;
 
 import java.util.List;
 
-import main.java.model.dao.EnderecoDAO;
-import main.java.model.vo.Endereco;
+import model.dao.EnderecoDAO;
+import model.vo.Endereco;
 
 public class EnderecoBO {
 
