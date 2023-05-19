@@ -1,4 +1,4 @@
-package model.exception;
+package main.java.model.exception;
 
 public class CampoInvalidoException extends Exception {
 

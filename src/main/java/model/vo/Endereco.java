@@ -1,8 +1,8 @@
-package model.vo;
+package main.java.model.vo;
 
 public class Endereco {
-	
-	//Atributos
+
+	// Atributos
 	private Integer id;
 	private String cep;
 	private String rua;
@@ -10,12 +10,12 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 	private String estado;
-	
-	//Construtores
+
+	// Construtores
 	public Endereco() {
-		
+
 	}
-	
+
 	public Endereco(Integer id, String cep, String rua, String numero, String bairro, String cidade, String estado) {
 		super();
 		this.id = id;
@@ -37,9 +37,9 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-	//Métodos
-	
-	//Métodos getter e setters
+	// Métodos
+
+	// Métodos getter e setters
 	public Integer getId() {
 		return id;
 	}
