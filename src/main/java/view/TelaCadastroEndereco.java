@@ -37,6 +37,7 @@ public class TelaCadastroEndereco {
 	private JLabel lblBairro;
 	private JLabel lblCidade;
 	private JLabel lblEstado;
+	private JFormattedTextField txtCep;
 
 	/**
 	 * Launch the application.
@@ -91,7 +92,7 @@ public class TelaCadastroEndereco {
 			JOptionPane.showMessageDialog(null, "Erro ao criar a máscara de CEP.");
 		}
 
-		JFormattedTextField txtCep = new JFormattedTextField(mascaraCep);
+		txtCep = new JFormattedTextField(mascaraCep);
 		txtCep.setText("      -   ");
 		frmCadastroDeEndereco.getContentPane().add(txtCep, "4, 4");
 
@@ -135,17 +136,21 @@ public class TelaCadastroEndereco {
 			public void actionPerformed(ActionEvent e) {
 				// Preencher um novo Endereco com o que foi informado na tela
 				Endereco novoEndereco = new Endereco();
-
-				//String cepInformado = (String) mascaraCep.stringToValue(txtCep.getText());
-
+				String cepInformado = "";
+				try {
+					cepInformado = (String) mascaraCep.stringToValue(txtCep.getText());
+				} catch (ParseException e2) {
+					JOptionPane.showMessageDialog(null, "Erro ao converter CEP informado!");
+				}
+				novoEndereco.setCep(txtCep.getText());
 				novoEndereco.setRua(txtRua.getText());
-				novoEndereco.setRua(txtNumero.getText());
-				novoEndereco.setRua(txtCidade.getText());
-				novoEndereco.setRua(txtEstado.getText());
+				novoEndereco.setNumero(txtNumero.getText());
+				novoEndereco.setCidade(txtCidade.getText());
+				novoEndereco.setEstado(txtEstado.getText());
 
 				// Instanciar um objeto de Enderecco Controller
 				EnderecoController controller = new EnderecoController();
-				// Chamar o controller.salver(novoEndereco)
+				// Chamar o controller.salvar(novoEndereco)
 
 				try {
 					controller.inserir(novoEndereco);
