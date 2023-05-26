@@ -4,9 +4,9 @@
   <artifactId>senac-dd-20231-guilherme</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <dependencies>
-	
-	<dependency>
+  
+	<dependencies>
+    <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.38</version>
@@ -17,19 +17,20 @@
 		<artifactId>mysql-connector-java</artifactId>
 		<version>8.0.17</version>
 	</dependency>
-	  
+	
 	<!-- Dependência para funcionar o FormLayout -->
 	<dependency>
 	    <groupId>com.jgoodies</groupId>
 	    <artifactId>jgoodies-common</artifactId>
 	    <version>1.8.1</version>
 	</dependency>
-	
+	<!-- https://mvnrepository.com/artifact/com.jgoodies/jgoodies-forms -->
 	<dependency>
 	    <groupId>com.jgoodies</groupId>
-	    <artifactId>jgoodies-common</artifactId>
+	    <artifactId>jgoodies-forms</artifactId>
 	    <version>1.6.0</version>
 	</dependency>
+
 	
 	<!-- Dependência para componente de seleção de datas -->
 	<dependency>
