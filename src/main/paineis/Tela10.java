@@ -44,21 +44,35 @@ public class Tela10 extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 101, 22);
 		contentPane.add(menuBar);
-		
+
 		JMenu mnRelatorio = new JMenu("Relatórios");
 		menuBar.add(mnRelatorio);
-		
+
 		JMenuItem mntmRelatorioVerde = new JMenuItem("Relatório Verde");
+		mntmRelatorioVerde.addActionListener(new ActionListener() {
+			private PainelVerde painelVerde;
+
+			public void actionPerformed(ActionEvent e) {
+				painelVerde = new PainelVerde();
+				setContentPane(painelVerde);
+				revalidate();
+			}
+		});
+
 		mnRelatorio.add(mntmRelatorioVerde);
-		
+
 		JMenuItem mntmRelatorioAzul = new JMenuItem("Relatório Azul");
 		mntmRelatorioAzul.addActionListener(new ActionListener() {
+			private PainelAzul painelAzul;
+
 			public void actionPerformed(ActionEvent e) {
-			
+				painelAzul = new PainelAzul();
+				setContentPane(painelAzul);
+				revalidate();
 			}
 		});
 		mnRelatorio.add(mntmRelatorioAzul);
