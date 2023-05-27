@@ -16,6 +16,7 @@ import com.jgoodies.forms.layout.RowSpec;
 
 public class PainelCadastroCliente extends JPanel {
 	private JTextField tfNome;
+	private JTextField tfTelefone;
 
 	/**
 	 * Create the panel.
@@ -78,8 +79,9 @@ public class PainelCadastroCliente extends JPanel {
 		JLabel lblTelefone = new JLabel("Telefone:");
 		add(lblTelefone, "4, 12, left, default");
 		
-		JComboBox cbxTelefone = new JComboBox();
-		add(cbxTelefone, "6, 12, 3, 1, fill, default");
+		tfTelefone = new JTextField();
+		add(tfTelefone, "6, 12, 3, 1, fill, default");
+		tfTelefone.setColumns(10);
 		
 		JButton btnVoltar = new JButton("Voltar");
 		add(btnVoltar, "6, 18, left, default");

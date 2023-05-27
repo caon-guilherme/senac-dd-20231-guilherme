@@ -23,7 +23,7 @@ public class TelaPrincipal10 extends JFrame {
 	private JMenu mnCliente;
 	private JMenuItem mntmCadastrarCliente;
 	private JMenuItem mntmListarCliente;
-	private JMenu mnTefelone;
+	private JMenu mnTelefone;
 	private JMenuItem mntmCadastroTelefone;
 	private JMenuItem mntmListarTelefone;
 	private JMenu mnEndereco;
@@ -31,7 +31,7 @@ public class TelaPrincipal10 extends JFrame {
 	private PainelCadastroCliente painelCadastroCliente;
 	private PainelCadastroTelefone painelCadastroTelefone;
 	private PainelCadastroEndereco painelCadastroEndereco;
-	
+	private PainelListagemCliente painelListagemCliente;
 	
 
 	/**
@@ -82,10 +82,17 @@ public class TelaPrincipal10 extends JFrame {
 		mnCliente.add(mntmCadastrarCliente);
 		
 		mntmListarCliente = new JMenuItem("Listar Clientes");
+		mntmListarCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				painelListagemCliente = new PainelListagemCliente();
+				setContentPane(painelListagemCliente);
+				revalidate();
+			}
+		});
 		mnCliente.add(mntmListarCliente);
 		
-		mnTefelone = new JMenu("Tefelone");
-		menuBar.add(mnTefelone);
+		mnTelefone = new JMenu("Telefone");
+		menuBar.add(mnTelefone);
 		
 		mntmCadastroTelefone = new JMenuItem("Cadastrar Telefone");
 		mntmCadastroTelefone.addActionListener(new ActionListener() {
@@ -95,15 +102,18 @@ public class TelaPrincipal10 extends JFrame {
 				revalidate();
 			}
 		});
-		mnTefelone.add(mntmCadastroTelefone);
+		mnTelefone.add(mntmCadastroTelefone);
 		
 		mntmListarTelefone = new JMenuItem("Listar Telefones");
-		mnTefelone.add(mntmListarTelefone);
+		mnTelefone.add(mntmListarTelefone);
 		
 		mnEndereco = new JMenu("Endereço");
 		menuBar.add(mnEndereco);
 		
 		mntmCadastroEndereco = new JMenuItem("Cadastrar Endereço");
 		mnEndereco.add(mntmCadastroEndereco);
+		
+		JMenuItem mntmListarEndereco = new JMenuItem("Listar Endereço");
+		mnEndereco.add(mntmListarEndereco);
 	}
 }

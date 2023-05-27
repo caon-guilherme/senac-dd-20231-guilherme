@@ -12,10 +12,13 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
 public class Tela10 extends JFrame {
 
 	private JPanel contentPane;
-
+	private PainelVerde painelVerde;
+	private PainelAzul painelAzul;
+	private PainelAmarelo painelAmarelo;
 	/**
 	 * Launch the application.
 	 */
@@ -54,7 +57,7 @@ public class Tela10 extends JFrame {
 
 		JMenuItem mntmRelatorioVerde = new JMenuItem("Relatório Verde");
 		mntmRelatorioVerde.addActionListener(new ActionListener() {
-			private PainelVerde painelVerde;
+			
 
 			public void actionPerformed(ActionEvent e) {
 				painelVerde = new PainelVerde();
@@ -67,7 +70,7 @@ public class Tela10 extends JFrame {
 
 		JMenuItem mntmRelatorioAzul = new JMenuItem("Relatório Azul");
 		mntmRelatorioAzul.addActionListener(new ActionListener() {
-			private PainelAzul painelAzul;
+			
 
 			public void actionPerformed(ActionEvent e) {
 				painelAzul = new PainelAzul();
